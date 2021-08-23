@@ -2,12 +2,14 @@ extends KinematicBody2D
 
 export var nick:String = "ник"
 export(String, MULTILINE) var message:String = "сообщение"
-
+export var text_speed:float = 0.5
+export var run_frequency:float = 0.01
 
 export var speed:float = 30
 export var area_radius:int = 100
 
 var center = Vector2(0,0)
+var text_percent = 0
 
 var instruction = 0
 
@@ -34,6 +36,7 @@ func move_to_point():
 
 func _ready():
 	center = position
+	text_percent = 1.1/float(message.length() ) * text_speed
 	instruction1_init()
 
 func _process(delta):
@@ -43,12 +46,12 @@ func _process(delta):
 	$NinePatchRect.rect_position.x -= 10
 	$NinePatchRect.rect_size = $message.rect_size
 	$NinePatchRect.rect_size.x += 20
-	$message.percent_visible+=0.01
+	$message.percent_visible+=text_percent
 	if not stop_ai:
 		
 		if instruction == 0:
 			$AnimatedSprite.animation = "idle"
-			if randf() < 0.01:
+			if randf() < run_frequency:
 				instruction1_init()
 				
 		if instruction == 1:
