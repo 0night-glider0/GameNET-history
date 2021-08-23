@@ -347,4 +347,3 @@ zoom = Vector2( 0.3, 0.3 )
 smoothing_enabled = true
 
 [connection signal="pressed" from="text/Label5/Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="text/Label6/Button" to="." method="_on_Button_pressed"]
