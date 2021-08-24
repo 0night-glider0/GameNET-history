@@ -167,6 +167,9 @@ position = Vector2( 465, 155 )
 [node name="box3" parent="YSort/boxes" instance=ExtResource( 5 )]
 position = Vector2( 290, 95 )
 
+[node name="box5" parent="YSort/boxes" instance=ExtResource( 5 )]
+position = Vector2( 128.1, 105.079 )
+
 [node name="box12" parent="YSort/boxes" instance=ExtResource( 5 )]
 position = Vector2( 605, 105 )
 scale = Vector2( 0.5, 0.5 )
@@ -235,11 +238,11 @@ tile_data = PoolIntArray( -1310727, 0, 0, -1310726, 0, 1, -1310725, 0, 1, -13107
 modulate = Color( 0.545098, 0.431373, 0.792157, 1 )
 position = Vector2( 390, 135 )
 nick = "night glider"
-message = "Добро пожаловать! 
-Я Иван, организатор кружка.
-Ты можешь выйти из музея 
-и познакомиться с другими 
-участниками кружка!"
+messages = [ "Добро пожаловать! Я Иван, организатор кружка. 
+Ты можешь выйти из музея и познакомиться с 
+другими участниками кружка!", "Не удивляйся что тут так пусто, 
+просто всё ещё в разработке :)" ]
+randomize_messages = false
 speed = 0.0
 area_radius = 0
 
@@ -247,8 +250,8 @@ area_radius = 0
 modulate = Color( 0.952941, 0.407843, 1, 1 )
 position = Vector2( 535, 95 )
 nick = "Vas Sferd"
-message = "прости за беспорядок в музее. 
-Не успели прибраться к твоему приходу :)"
+messages = [ "прости за беспорядок в музее. 
+Не успели прибраться к твоему приходу :)" ]
 speed = 15.0
 area_radius = 25
 
@@ -256,16 +259,16 @@ area_radius = 25
 modulate = Color( 0.47451, 0.0705882, 0.137255, 1 )
 position = Vector2( 400.398, 462.224 )
 nick = "SNoD"
-message = "шалом. Вы верите в АНИМЕ!?"
+messages = [ "шалом. Вы верите в АНИМЕ!?" ]
 
 [node name="лиза" parent="YSort" instance=ExtResource( 7 )]
 modulate = Color( 0.486275, 0.960784, 0.741176, 1 )
 position = Vector2( 475, 200 )
 nick = "лиза"
-message = "привет! меня зовут Лиза,
+messages = [ "привет! меня зовут Лиза,
 я люблю искусство и 
 маленьких котят....
-очень хочется роллов..........."
+очень хочется роллов..........." ]
 text_speed = 1.0
 run_frequency = 2.0
 speed = 100.0
@@ -305,83 +308,97 @@ __meta__ = {
 modulate = Color( 0.439216, 0.0235294, 0.403922, 1 )
 position = Vector2( 633.419, 352.857 )
 nick = "GoalKeeper"
-message = "Привет, я делаю музыку и, 
-надеюсь, делаю это хорошо :) "
+messages = [ "Привет, я делаю музыку и, 
+надеюсь, делаю это хорошо :) ", "Новый трек? 
+Неплохая идея! 8)", "Чем могу быть полезен? :3", "Хочешь порешать судоку? Пока 
+не могу, но скоро присоединюсь ;)" ]
+randomize_messages = false
 
 [node name="etha0" parent="YSort" instance=ExtResource( 7 )]
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 85, 390 )
 nick = "etha0"
-message = "Прива, у нас тут кулити"
+messages = [ "Прива, у нас тут кулити" ]
 
 [node name="Wuxhiff" parent="YSort" instance=ExtResource( 7 )]
 modulate = Color( 0.576471, 0.458824, 0.87451, 1 )
 position = Vector2( 1140, -35 )
 nick = "Wuxhiff"
-message = "Ну здарова приятель... Хочешь загадку загадаю, которая возможно 
+messages = [ "Ну здарова приятель... Хочешь загадку загадаю, которая возможно 
 определит твоё будущее: человек который разгадывает эту загадку, 
 автоматический принимается в Apple на Senior-разработчика! 
 Эту загадку придумал сам СТИВ ДЖОПС!... Заинтригован? Ну 
 слушай... \"Вас уменьшили в размере, а затем засунули в 
-зад крокодилу. Ваши действия. На размышление 30 секунд\"..."
+зад крокодилу. Ваши действия. На размышление 30 секунд\"...", "Жак Фреско и Владимир Ленин 
+умерли за неисполняемое", "GLaDOS <3", "лол", "Ладно", "Йо", "Извини занят: 
+практикую Flutter/Dart", "Когда-нибудь я нарисую 
+*Секретная информация*, 
+и буду грести деньги лопатой...", "\"Работать на фронте в 
+мобильной разработке 
+довольно неплохо\"", "Не хочешь зайти внутрь ;) ?", "Эм... что там внутри? 
+Все время забываю, 
+если честно...", "Давай со мной в неизвестность", "Иногда я не хочу заходить внутрь своего дома, 
+потому что сквозь время и пространство могу 
+наткнуться на Роберта и Грега.... Ужас." ]
 
 [node name="Polo" parent="YSort" instance=ExtResource( 7 )]
 modulate = Color( 0.870588, 0.105882, 0.87451, 1 )
 position = Vector2( 169.948, 295.874 )
 nick = "Polo"
-message = "сделаю арт за пачку 
-нагетсов из мака"
+messages = [ "сделаю арт за пачку 
+нагетсов из мака" ]
 
 [node name="Protor" parent="YSort" instance=ExtResource( 7 )]
 modulate = Color( 0.0627451, 0.815686, 0.517647, 1 )
 position = Vector2( 1010, 155 )
 nick = "Protor"
-message = "чаще улыбайся. Хорошее 
-настроение - залог хорошего дня. "
+messages = [ "чаще улыбайся. Хорошее 
+настроение - залог хорошего дня. " ]
 
 [node name="Аннетт Беннетт" parent="YSort" instance=ExtResource( 7 )]
 modulate = Color( 0.654902, 0.133333, 0.133333, 1 )
 position = Vector2( 245, 420 )
 nick = "Аннетт Беннетт"
-message = "Привет,  меня Аня зовут, чем помочь, чо по чём?"
+messages = [ "Привет,  меня Аня зовут, чем помочь, чо по чём?" ]
 
-[node name="нет постоянного" parent="YSort" instance=ExtResource( 7 )]
+[node name="excellent_programmer (no)" parent="YSort" instance=ExtResource( 7 )]
 modulate = Color( 0.878431, 0.898039, 0.0196078, 1 )
 position = Vector2( 925, 370 )
-nick = "Нет постоянного"
-message = "ИГРЫ."
+nick = "excellent_programmer (no)"
+messages = [ "ИГРЫ." ]
 
 [node name="broken sad" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 715, 355 )
 nick = "broken sad"
-message = "Привет, я Ваня, 
-я люблю программировать"
+messages = [ "Привет, я Ваня, 
+я люблю программировать" ]
 
 [node name="Morrys" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 945, -75 )
 nick = "Morrys"
-message = "Привет, я Лёшка, 
-чем занимаешься?"
+messages = [ "Привет, я Лёшка, 
+чем занимаешься?", "Круто, а ты любишь цветы?", "Почему розы причиняют боль?", "ты красивый...умри" ]
+randomize_messages = false
 
 [node name="hrk" parent="YSort" instance=ExtResource( 7 )]
 modulate = Color( 0.137255, 0.615686, 0, 1 )
 position = Vector2( 1110, 330 )
 nick = "Hrk"
-message = "Я люблю майнкрафт"
+messages = [ "Я люблю майнкрафт" ]
 
 [node name="Ghum" parent="YSort" instance=ExtResource( 7 )]
 modulate = Color( 0.545098, 0, 1, 1 )
 position = Vector2( 1115, 155 )
 nick = "Ghum"
-message = "Не хочешь разработать 
-web приложение?"
+messages = [ "Не хочешь разработать 
+web приложение?" ]
 
-[node name="Фелисити Вандеркеллер" parent="YSort" instance=ExtResource( 7 )]
+[node name="abedead" parent="YSort" instance=ExtResource( 7 )]
 modulate = Color( 0.917647, 0.219608, 0.0470588, 1 )
 position = Vector2( 321.794, 60.534 )
 nick = "abedead"
-message = "привет. давай я проведу
-экскурсию по нашему музею."
+messages = [ "привет. давай я проведу
+экскурсию по нашему музею." ]
 run_frequency = -1.0
 speed = 0.0
 area_radius = 0

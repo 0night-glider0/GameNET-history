@@ -17,6 +17,10 @@ func _process(delta):
 		move.y = -1
 	if Input.is_action_pressed("move_down"):
 		move.y = 1
+		
+	if OS.has_touchscreen_ui_hint():
+		if Input.is_action_pressed("throw"):
+			move = ( get_global_mouse_position() - position ).normalized()
 	
 	if move == Vector2():
 		$AnimatedSprite.animation = "idle"

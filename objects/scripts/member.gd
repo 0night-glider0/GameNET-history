@@ -1,21 +1,35 @@
 extends KinematicBody2D
 
 export var nick:String = "ник"
-export(String, MULTILINE) var message:String = "сообщение"
+export(Array, String, MULTILINE) var messages = ["привет"]
 export var text_speed:float = 0.5
+export var randomize_messages = true
 export var run_frequency:float = 0.01
 
 export var speed:float = 30
 export var area_radius:int = 100
 
-var center = Vector2(0,0)
-var text_percent = 0
 
-var instruction = 0
+var message:String = " "  #текущие сообщение
+var center = Vector2(0,0) #центр окружности патрулирования
+var text_percent = 0      #скорость набора текста 
 
-var target = Vector2()
+var instruction = 0       #текущая инструкция
 
-var stop_ai = false
+var target = Vector2()    #текщая точка назначения
+
+var stop_ai = false       #тумблер отключения ИИ
+var message_id = 0        #номер сообщения в списке messages
+
+func pick_message():
+	message = messages[message_id]
+	text_percent = 1.1/float(message.length() ) * text_speed
+	
+	message_id+=1
+	if message_id > messages.size()-1:
+		message_id = 0
+		if randomize_messages:
+			messages.shuffle()
 
 func instruction0_init():
 	instruction = 0
@@ -35,8 +49,8 @@ func move_to_point():
 		instruction0_init()
 
 func _ready():
+	pick_message()
 	center = position
-	text_percent = 1.1/float(message.length() ) * text_speed
 	instruction1_init()
 
 func _process(delta):
@@ -75,6 +89,7 @@ func _on_Area2D_body_entered(body):
 
 func _on_Area2D_body_exited(body):
 	if body.name == "player":
+		pick_message()
 		$NinePatchRect.visible = false
 		$message.visible = false
 		stop_ai = false
