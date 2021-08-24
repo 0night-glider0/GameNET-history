@@ -4,6 +4,7 @@ export var nick:String = "ник"
 export(Array, String, MULTILINE) var messages = ["привет"]
 export var text_speed:float = 0.5
 export var randomize_messages = true
+export var first_message_differ = false
 export var run_frequency:float = 0.01
 
 export var speed:float = 30
@@ -21,11 +22,19 @@ var target = Vector2()    #текщая точка назначения
 var stop_ai = false       #тумблер отключения ИИ
 var message_id = 0        #номер сообщения в списке messages
 
+#проверка, было ли первое сообщение в списке messages показано
+var check_for_first_message = false 
+
 func pick_message():
 	message = messages[message_id]
-	text_percent = 1.1/float(message.length() ) * text_speed
+	text_percent = 1.1/float(message.length()) * text_speed
 	
-	message_id+=1
+	if first_message_differ and not check_for_first_message:
+		messages.pop_front()
+		check_for_first_message = true
+		message_id -= 1
+		
+	message_id += 1
 	if message_id > messages.size()-1:
 		message_id = 0
 		if randomize_messages:
