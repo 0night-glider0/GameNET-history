@@ -411,7 +411,7 @@ current = true
 zoom = Vector2( 0.3, 0.3 )
 smoothing_enabled = true
 
-[node name="StaticBody2D" parent="YSort" instance=ExtResource( 11 )]
+[node name="hotel" parent="YSort" instance=ExtResource( 11 )]
 position = Vector2( 399.801, 413.706 )
 
 [connection signal="pressed" from="text/Label5/Button" to="." method="_on_Button_pressed"]

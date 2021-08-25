@@ -14,9 +14,8 @@ func _process(delta):
 	
 	if Input.is_action_just_released("throw"):
 		current_box = self
-		
+	
 	if Input.is_action_pressed("throw"):
 		if current_box != self:
 			current_box.speed.x += (position.x - current_box.position.x) / 2
 			current_box.speed.y += (position.y - current_box.position.y) / 2
-			

@@ -3,8 +3,8 @@ extends KinematicBody2D
 export var nick:String = "ник"
 export(Array, String, MULTILINE) var messages = ["привет"]
 export var text_speed:float = 0.5
-export var randomize_messages = true
-export var first_message_differ = false
+export var randomize_messages:bool = true
+export var first_message_differ:bool = false
 export var run_frequency:float = 0.01
 
 export var speed:float = 30
@@ -13,9 +13,11 @@ export var area_radius:int = 100
 
 var message:String = " "  #текущие сообщение
 var center = Vector2(0,0) #центр окружности патрулирования
-var text_percent = 0      #скорость набора текста 
+var text_percent = 0      #скорость набора текста измеряется в процентах/кадр
 
 var instruction = 0       #текущая инструкция
+# 0 - стою на месте
+# 1 - иду в какую-то точку
 
 var target = Vector2()    #текщая точка назначения
 
@@ -29,12 +31,13 @@ func pick_message():
 	message = messages[message_id]
 	text_percent = 1.1/float(message.length()) * text_speed
 	
+	message_id += 1
+	
 	if first_message_differ and not check_for_first_message:
 		messages.pop_front()
 		check_for_first_message = true
 		message_id -= 1
-		
-	message_id += 1
+	
 	if message_id > messages.size()-1:
 		message_id = 0
 		if randomize_messages:
@@ -60,23 +63,26 @@ func move_to_point():
 func _ready():
 	pick_message()
 	center = position
-	instruction1_init()
-
-func _process(delta):
+	
 	$nickname.text = nick
 	$message.text = message
+	
+	instruction1_init()
+	
+
+func _process(delta):
 	$NinePatchRect.rect_position = $message.rect_position
 	$NinePatchRect.rect_position.x -= 10
 	$NinePatchRect.rect_size = $message.rect_size
 	$NinePatchRect.rect_size.x += 20
 	$message.percent_visible+=text_percent
+	
 	if not stop_ai:
-		
 		if instruction == 0:
 			$AnimatedSprite.animation = "idle"
 			if randf() < run_frequency:
 				instruction1_init()
-				
+			
 		if instruction == 1:
 			$AnimatedSprite.animation = "walk"
 			if target.x - position.x > 0:
@@ -86,8 +92,6 @@ func _process(delta):
 			move_to_point()
 	else:
 		$AnimatedSprite.animation = "idle"
-	
-	
 
 func _on_Area2D_body_entered(body):
 	if body.name == "player":
