@@ -64,13 +64,12 @@ func _ready():
 	pick_message()
 	center = position
 	
-	$nickname.text = nick
-	$message.text = message
-	
 	instruction1_init()
 	
 
 func _process(delta):
+	$nickname.text = nick
+	$message.text = message
 	$NinePatchRect.rect_position = $message.rect_position
 	$NinePatchRect.rect_position.x -= 10
 	$NinePatchRect.rect_size = $message.rect_size

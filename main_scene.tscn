@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://main_tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://objects/mouse.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://NinePatchRect2.gd" type="Script" id=9]
 [ext_resource path="res://sprites/gui.png" type="Texture" id=10]
 [ext_resource path="res://objects/hotel.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Label.gd" type="Script" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "ground tiles.png 0"
@@ -60,9 +61,12 @@ margin_bottom = 130.0
 custom_fonts/font = ExtResource( 3 )
 text = "используйте стрелочки
 или WASD для передвижения"
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+mobile_text = "Используйте палец 
+для передвижения"
 
 [node name="Label2" type="Label" parent="text"]
 margin_left = 170.0
@@ -72,9 +76,12 @@ margin_bottom = 110.0
 custom_fonts/font = ExtResource( 3 )
 text = "нажмите мышкой на 
 коробку и перетащите"
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+mobile_text = "Нажмите два раза пальцем
+на коробку и перетащите"
 
 [node name="Label3" type="Label" parent="text"]
 margin_left = 325.0
@@ -318,7 +325,7 @@ randomize_messages = false
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 85, 390 )
 nick = "etha0"
-messages = [ "Прива, у нас тут кулити" ]
+messages = [ "дайте денег", "я хочу водички" ]
 
 [node name="Wuxhiff" parent="YSort" instance=ExtResource( 7 )]
 modulate = Color( 0.576471, 0.458824, 0.87451, 1 )
@@ -402,6 +409,22 @@ messages = [ "привет. давай я проведу
 run_frequency = -1.0
 speed = 0.0
 area_radius = 0
+
+[node name="Zuraket" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 576.292, 390.93 )
+nick = "Zuraket"
+messages = [ "What you know about 
+rolling down in the deep?", "Bruh", "Bababooey", "Welcome to San Andreas, 
+I'm CJ from Grove Street
+Land of the heinous, 
+gangbangers, and cold heat.", "a.", "Amogus", "Obama, hamburger, sussy balls
+Lil Mosey is white, sussy balls
+EDP
+445
+Balls
+I like, 13", "I love refridgerators" ]
+run_frequency = 0.035
+area_radius = 180
 
 [node name="player" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 90, 85 )
