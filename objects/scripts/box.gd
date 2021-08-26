@@ -9,8 +9,8 @@ func _ready():
 	add_to_group("throwable")
 
 func _process(delta):
+	rotate_speed = speed.length() * rotate_direction * 0.05
 	speed*=0.95
 	rotation_degrees+=rotate_speed
 	speed = move_and_slide(speed)
 	
-	rotate_speed = speed.length() * rotate_direction * 0.05
