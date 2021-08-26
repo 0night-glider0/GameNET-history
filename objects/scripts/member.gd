@@ -43,6 +43,14 @@ func pick_message():
 		if randomize_messages:
 			messages.shuffle()
 
+func first_shuffle():
+	if first_message_differ:
+		var buffer:String = messages.pop_front()
+		messages.shuffle()
+		messages.push_front(buffer)
+	else:
+		messages.shuffle()
+
 func instruction0_init():
 	instruction = 0
 
@@ -61,11 +69,11 @@ func move_to_point():
 		instruction0_init()
 
 func _ready():
+	first_shuffle()
 	pick_message()
 	center = position
 	
 	instruction1_init()
-	
 
 func _process(delta):
 	$nickname.text = nick
