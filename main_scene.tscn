@@ -101,6 +101,63 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label8" type="Label" parent="text"]
+margin_left = 259.153
+margin_top = -127.617
+margin_right = 370.153
+margin_bottom = -65.6167
+custom_fonts/font = ExtResource( 3 )
+text = "28-30 мая 2021 года
+участие в ASAP Espresso Jam"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label9" type="Label" parent="text"]
+margin_left = 436.703
+margin_top = -127.617
+margin_right = 582.703
+margin_bottom = -65.6167
+custom_fonts/font = ExtResource( 3 )
+text = "28 августа 2021 года
+\"Величайшая сходка\" в
+парке победы."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="text"]
+margin_left = 12.0
+margin_top = -131.0
+margin_right = 206.0
+margin_bottom = -69.0
+custom_fonts/font = ExtResource( 3 )
+text = "GameNET - кружок создания игр.
+Мы регулярно собираемся,  
+разрабатываем игры и учимся новому!
+Хочешь присоединиться к нам?"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="text/Label7"]
+margin_left = 48.5
+margin_top = 62.0
+margin_right = 137.5
+margin_bottom = 79.0
+custom_fonts/font = ExtResource( 3 )
+shortcut_in_tooltip = false
+text = "Хочу вступить!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label4" type="Label" parent="text"]
 margin_left = 503.0
 margin_top = -25.0
@@ -434,4 +491,5 @@ smoothing_enabled = true
 [node name="hotel" parent="YSort" instance=ExtResource( 11 )]
 position = Vector2( 399.801, 413.706 )
 
+[connection signal="pressed" from="text/Label7/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="text/Label5/Button" to="." method="_on_Button_pressed"]
