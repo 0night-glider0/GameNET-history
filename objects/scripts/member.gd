@@ -10,6 +10,8 @@ export var run_frequency:float = 0.01
 export var speed:float = 30
 export var area_radius:int = 100
 
+export var ghost:bool = false
+
 
 var message:String = " "  #текущие сообщение
 var center = Vector2(0,0) #центр окружности патрулирования
@@ -99,6 +101,10 @@ func _process(delta):
 			move_to_point()
 	else:
 		$AnimatedSprite.animation = "idle"
+	
+	#ghost поведение
+	if ghost:
+		modulate.a = clamp( 20/position.distance_to(get_node("/root/world/YSort/player").position), 0, 1)
 
 func _on_Area2D_body_entered(body):
 	if body.name == "player":
