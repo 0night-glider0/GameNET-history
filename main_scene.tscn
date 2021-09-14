@@ -474,6 +474,7 @@ nick = "Morrys"
 messages = [ "Привет, я Лёшка, 
 чем занимаешься?", "Круто, а ты любишь цветы?", "Почему розы причиняют боль?", "ты красивый...умри" ]
 randomize_messages = false
+ghost = true
 
 [node name="hrk" parent="YSort" instance=ExtResource( 7 )]
 modulate = Color( 0.137255, 0.615686, 0, 1 )
