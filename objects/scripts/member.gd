@@ -7,7 +7,7 @@ export var randomize_messages:bool = true
 export var first_message_differ:bool = false
 export var run_frequency:float = 0.01
 
-export var speed:float = 30
+export var speed:float = 25
 export var area_radius:int = 100
 
 export var ghost:bool = false

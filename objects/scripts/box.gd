@@ -11,6 +11,5 @@ func _ready():
 func _process(delta):
 	speed*=0.95
 	rotation_degrees+=rotate_speed
-	speed = move_and_slide(speed)
-	
+	speed = move_and_slide(speed, Vector2(), false, 4, 0.7, true)
 	rotate_speed = speed.length() * rotate_direction * 0.05

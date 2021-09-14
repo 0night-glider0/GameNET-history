@@ -54,9 +54,9 @@ scale = Vector2( 0.5, 0.5 )
 
 [node name="Label" type="Label" parent="text"]
 margin_left = 21.6742
-margin_top = 37.5906
+margin_top = 24.877
 margin_right = 161.674
-margin_bottom = 62.5906
+margin_bottom = 49.877
 custom_fonts/font = ExtResource( 3 )
 text = "используйте стрелочки
 или WASD для передвижения"
@@ -68,9 +68,9 @@ __meta__ = {
 
 [node name="Label2" type="Label" parent="text"]
 margin_left = 29.8418
-margin_top = 104.355
+margin_top = 72.0414
 margin_right = 153.842
-margin_bottom = 129.355
+margin_bottom = 97.0414
 custom_fonts/font = ExtResource( 3 )
 text = "нажмите мышкой на 
 коробку и перетащите"
@@ -514,8 +514,36 @@ I like, 13", "I love refridgerators" ]
 run_frequency = 0.035
 area_radius = 180
 
+[node name="Ripulca" parent="YSort" instance=ExtResource( 7 )]
+modulate = Color( 0.239216, 0.309804, 0.466667, 1 )
+position = Vector2( 124.658, 470.332 )
+nick = "Ripulca"
+messages = [ "Не бойся, когда ты один, 
+бойся, когда ты два." ]
+ghost = true
+
+[node name="Кирилл" parent="YSort" instance=ExtResource( 7 )]
+modulate = Color( 1, 0.501961, 0, 1 )
+position = Vector2( 683.319, 464.849 )
+nick = "Кирилл"
+messages = [ "Привет! Меня зовут Кирилл 
+и я обожаю творчество, 
+искусство и фотографию" ]
+
+[node name="Ash" parent="YSort" instance=ExtResource( 7 )]
+modulate = Color( 0.352941, 0, 0.615686, 1 )
+position = Vector2( 56.1266, 339.232 )
+nick = "Ash"
+messages = [ "Я покажу тебе, кто здесь босс качалки!" ]
+
+[node name="Empat" parent="YSort" instance=ExtResource( 7 )]
+modulate = Color( 1, 0.501961, 0, 1 )
+position = Vector2( 881.99, 236.779 )
+nick = "Empat"
+messages = [ "Ваза уже была разбита" ]
+
 [node name="player" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 90, 85 )
+position = Vector2( 90, 57.454 )
 
 [node name="Camera2D" type="Camera2D" parent="YSort/player"]
 current = true
