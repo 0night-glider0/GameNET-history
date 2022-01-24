@@ -1,5 +1,8 @@
 extends NinePatchRect
 
+func _ready():
+	get_parent().initialize()
+
 func _process(delta):
 	if get_parent().stop_ai:
 		visible = false

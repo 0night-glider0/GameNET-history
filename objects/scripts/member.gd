@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var nick:String = "ник"
-export(Array, String, MULTILINE) var messages = ["привет"]
+export var messages:Array = ["Привет"]
 export var text_speed:float = 0.5
 export var randomize_messages:bool = true
 export var first_message_differ:bool = false
@@ -31,6 +31,16 @@ var check_for_first_message = false
 
 func pick_message():
 	message = messages[message_id]
+	
+	var max_width = get_viewport_rect().size.x * 0.9 * 0.3
+	var text_size = $message.get_font("font").get_string_size(message).x
+	if text_size > max_width:
+		$message.margin_left = -max_width/2
+		$message.margin_right = max_width/2
+	else:
+		$message.margin_left = -text_size/2
+		$message.margin_right = text_size/2
+	
 	text_percent = 1.1/float(message.length()) * text_speed
 	
 	message_id += 1
@@ -70,16 +80,17 @@ func move_to_point():
 	if test.length() < speed/3:
 		instruction0_init()
 
-func _ready():
+func initialize():
 	first_shuffle()
 	pick_message()
 	center = position
 	
-	instruction1_init()
+	instruction0_init()
 
 func _process(delta):
 	$nickname.text = nick
 	$message.text = message
+	
 	$NinePatchRect.rect_position = $message.rect_position
 	$NinePatchRect.rect_position.x -= 10
 	$NinePatchRect.rect_size = $message.rect_size
