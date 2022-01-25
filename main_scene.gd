@@ -16,6 +16,9 @@ func _on_Button_pressed():
 func _on_Button2_pressed():
 	OS.shell_open("https://forms.gle/zzWBmATFap6AXxUR9")
 
+func _on_avatar_button_pressed():
+	OS.shell_open("https://goalkepper.github.io/AvatarEditor/")
+
 func _on_HTTPGet_request_completed(result, response_code, headers, body):
 	var json = parse_json(body.get_string_from_utf8())
 	for element in json:
@@ -34,3 +37,6 @@ func _on_HTTPGet_request_completed(result, response_code, headers, body):
 		new_member.text_speed = json[element]["text_speed"]
 		new_member.modulate = json[element]["color"]
 		new_member.initialize()
+
+
+
