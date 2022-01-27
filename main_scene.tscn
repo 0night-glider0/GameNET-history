@@ -337,10 +337,10 @@ run_frequency = 2.0
 speed = 100.0
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="YSort/лиза"]
-margin_left = -63.25
-margin_top = -39.75
-margin_right = 63.75
-margin_bottom = -21.75
+margin_left = -63.0
+margin_top = -40.0
+margin_right = 43.0
+margin_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource( 10 )
@@ -357,12 +357,12 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="YSort/лиза/NinePatchRect2"]
-margin_left = 3.76401
-margin_top = 3.13519
-margin_right = 123.764
-margin_bottom = 17.1352
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 102.0
+margin_bottom = 17.0
 custom_fonts/font = ExtResource( 3 )
-text = "очень хочется роллов..."
+text = "Спасибо за роллы!!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
